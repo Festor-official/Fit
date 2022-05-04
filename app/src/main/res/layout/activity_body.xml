@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".BodyActivity" android:layout_centerInParent="true" android:background="#FFFFFF">
+
+
+    <ImageView
+            android:id="@+id/charts2"
+            android:src="@drawable/charts"
+            android:clickable="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:focusable="true" android:layout_alignParentEnd="true" android:layout_alignParentBottom="true"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"/>
+    <ImageView
+            android:id="@+id/add"
+            android:clickable="true"
+            android:src="@drawable/add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ImageView
+            android:id="@+id/image_body"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:scaleType="centerInside" android:scaleX="2.3"
+            android:scaleY="2.3" android:layout_below="@id/height" android:layout_above="@id/weight"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toBottomOf="parent"/>
+    <TextView
+            android:id="@+id/shoulders"
+            android:text="shoulders:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:textSize="16sp" android:textStyle="bold"
+            android:textColor="#686868" app:layout_constraintBottom_toTopOf="@+id/chest"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/image_body" android:layout_marginStart="130dp"
+            android:layout_marginTop="200dp"/>
+    <TextView
+            android:id="@+id/biceps"
+            android:text="biceps:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:textSize="16sp" android:textStyle="bold"
+            android:textColor="#686868" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/wrest" app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="150dp"
+            app:layout_constraintStart_toEndOf="@+id/image_body" android:layout_marginEnd="120dp"/>
+
+    <TextView
+            android:id="@+id/chest"
+            android:text="chest:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:textSize="16sp" android:textStyle="bold"
+            android:textColor="#686868" app:layout_constraintBottom_toTopOf="@+id/talia"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="@+id/shoulders"
+            app:layout_constraintStart_toStartOf="@+id/shoulders" android:layout_marginTop="150dp"/>
+    <TextView
+            android:id="@+id/forearm"
+            android:text="forearm:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:textSize="16sp" android:textStyle="bold"
+            android:textColor="#686868" app:layout_constraintTop_toBottomOf="@+id/biceps"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintBottom_toTopOf="@+id/wrest"
+            android:layout_marginTop="50dp"/>
+    <TextView
+            android:id="@+id/wrest"
+            android:text="wrest:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:textSize="16sp" android:textStyle="bold"
+            android:textColor="#686868" android:layout_alignParentEnd="true" android:layout_centerVertical="true"
+            app:layout_constraintEnd_toEndOf="@+id/image_body" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginEnd="10dp"/>
+    <TextView
+            android:id="@+id/talia"
+            android:text="talia:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:textSize="16sp" android:textStyle="bold"
+            android:textColor="#686868" android:layout_centerVertical="true"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/chest" app:layout_constraintStart_toStartOf="@+id/chest"
+            android:layout_marginBottom="32dp"/>
+    <TextView
+            android:id="@+id/legs"
+            android:text="legs:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:textSize="16sp" android:textStyle="bold"
+            android:textColor="#686868" app:layout_constraintBottom_toTopOf="@+id/weight"
+            app:layout_constraintTop_toBottomOf="@+id/talia" app:layout_constraintEnd_toEndOf="@+id/talia"
+            app:layout_constraintStart_toStartOf="@+id/talia" android:layout_marginBottom="64dp"/>
+    <TextView
+            android:id="@+id/caviar"
+            android:text="caviar:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:textSize="16sp" android:textStyle="bold"
+            android:textColor="#686868" app:layout_constraintTop_toBottomOf="@+id/legs"
+            app:layout_constraintBottom_toTopOf="@+id/weight" app:layout_constraintEnd_toEndOf="@+id/legs"
+            app:layout_constraintStart_toStartOf="@+id/legs"/>
+
+
+    <TextView
+            android:id="@+id/height"
+            android:text="height:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:textSize="16sp"
+            android:textStyle="bold" android:textColor="#686868" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toTopOf="@+id/image_body"
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="25dp"/>
+
+    <TextView
+            android:id="@+id/weight"
+            android:textColor="#686868"
+            android:text="weight:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/image_body" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" android:textStyle="bold"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
