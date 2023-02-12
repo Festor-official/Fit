@@ -1,6 +1,7 @@
-package com.example.fit
+package com.example.fit.dao
 
 import androidx.room.*
+import com.example.fit.data.Exercise
 
 @Dao
 interface ExerciseDao {
@@ -9,10 +10,11 @@ interface ExerciseDao {
     fun get(): List<Exercise>
 
     @Query("SELECT * FROM exercise_table WHERE exercise_id =:id")
-    fun getId(id: Int):Exercise
+    fun getId(id: Int): Exercise
 
     @Query("SELECT * FROM exercise_table ORDER BY exercise_id DESC LIMIT 1")
-    fun getLastRepeat():Exercise
+    fun getLastRepeat(): Exercise
+
 
     @Update
     fun update(exercise: Exercise)

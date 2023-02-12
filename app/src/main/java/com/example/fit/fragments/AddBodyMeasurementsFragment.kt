@@ -1,37 +1,36 @@
 
-package com.example.fit
+package com.example.fit.fragments
 
 import android.app.AlertDialog
 import android.app.Dialog
 import android.content.DialogInterface
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import android.widget.EditText
 import android.widget.TextView
 import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.ViewModelProvider
+import com.example.fit.viewmodel.BodyViewModel
+import com.example.fit.R
+import com.example.fit.data.Body
 import java.lang.IllegalStateException
 import java.text.DateFormat
 import java.text.SimpleDateFormat
 import java.util.*
 
 
-class BodyFragment : DialogFragment() {
+class AddBodyMeasurementsFragment : DialogFragment() {
 
     var count = 0
     var bodyList = arrayListOf<String>()
-    private lateinit var bodyViewModel:BodyViewModel
+    private lateinit var bodyViewModel: BodyViewModel
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val listBody = arrayListOf<String>("height","shoulders","chest","biceps","talia","forearm","wrest","legs","caviar","weight")
         val alertDaySkip = activity?.let {
             val builder = AlertDialog.Builder(it)
             val inflater = requireActivity().layoutInflater
-            val v: View = inflater.inflate(R.layout.fragment_body, null)
+            val v: View = inflater.inflate(R.layout.fragment_add_measurements_body, null)
             val next = v.findViewById<TextView>(R.id.next)
 
             next.setOnClickListener{

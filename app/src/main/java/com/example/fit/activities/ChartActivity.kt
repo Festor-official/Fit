@@ -1,20 +1,27 @@
-package com.example.fit
+package com.example.fit.activities
 
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import com.example.fit.viewmodel.ExerciseViewModel
+import com.example.fit.R
+import com.example.fit.data.Repeat
+import com.example.fit.data.Body
+import com.example.fit.viewmodel.BodyViewModel
 
 import com.github.mikephil.charting.charts.LineChart
 import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.data.LineData
 import com.github.mikephil.charting.data.LineDataSet
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class ChartActivity : AppCompatActivity() {
-    private lateinit var  exerciseViewModel: ExerciseViewModel
-    private lateinit var  bodyViewModel: BodyViewModel
+    private val  exerciseViewModel: ExerciseViewModel by viewModels()
+    private val  bodyViewModel: BodyViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,8 +32,6 @@ class ChartActivity : AppCompatActivity() {
         val chart = findViewById<View>(R.id.chart) as LineChart
         var count = 0
         // x = days y = amount
-        exerciseViewModel = ViewModelProvider(this@ChartActivity).get(ExerciseViewModel::class.java)
-        bodyViewModel = ViewModelProvider(this@ChartActivity).get(BodyViewModel::class.java)
 
         val entries: ArrayList<Entry> = ArrayList()
 
@@ -34,7 +39,7 @@ class ChartActivity : AppCompatActivity() {
         var allRepeat = listOf<Repeat>()
 
         if (exercise_id == "body"){
-            allMeasurments =  bodyViewModel.allMesurments
+            allMeasurments =  bodyViewModel.allMeasurements
         } else{
             allRepeat = exerciseViewModel.allExercise[exercise_id.toInt()].exercise_list
 

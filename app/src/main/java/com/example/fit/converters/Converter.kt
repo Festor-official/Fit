@@ -1,6 +1,7 @@
-package com.example.fit
+package com.example.fit.converters
 
 import androidx.room.TypeConverter
+import com.example.fit.data.Repeat
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 

@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/layout/activity_body.xml" value="0.18" />
+        <entry key="app/src/main/res/layout/activity_chart.xml" value="0.19265639165911153" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.19265639165911153" />
+        <entry key="app/src/main/res/layout/activity_repeat.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/best_result_sample.xml" value="0.19265639165911153" />
+        <entry key="app/src/main/res/layout/exercise_sample.xml" value="0.21975203078238564" />
+        <entry key="app/src/main/res/layout/fragment_exercise_list.xml" value="0.21975203078238564" />
+        <entry key="app/src/main/res/layout/fragment_weight.xml" value="0.46306306306306305" />
+        <entry key="app/src/main/res/layout/result_sample.xml" value="0.33" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

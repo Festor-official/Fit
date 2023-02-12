@@ -1,4 +1,4 @@
-package com.example.fit
+package com.example.fit.database
 
 import android.content.Context
 import androidx.room.Database
@@ -7,11 +7,13 @@ import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
+import com.example.fit.data.Exercise
+import com.example.fit.data.Repeat
+import com.example.fit.converters.Converter
+import com.example.fit.dao.ExerciseDao
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import java.util.*
-
 
 
 @Database(entities = [Exercise::class], version = 2,exportSchema = false)
@@ -23,7 +25,7 @@ abstract class ExerciseDatabase: RoomDatabase() {
     companion object{
         @Volatile
         private var INSTANCEEXERCISE: ExerciseDatabase? = null
-        fun getDatabase(context: Context, scope:CoroutineScope):ExerciseDatabase{
+        fun getDatabase(context: Context, scope:CoroutineScope): ExerciseDatabase {
             val migration1_2 = object:Migration(1,2){
                 override fun migrate(database: SupportSQLiteDatabase) {
                 }
@@ -35,7 +37,7 @@ abstract class ExerciseDatabase: RoomDatabase() {
                 }
             }
 
-            return INSTANCEEXERCISE?: synchronized(this){
+            return INSTANCEEXERCISE ?: synchronized(this){
                 val instanceExercise = Room.databaseBuilder(
                     context.applicationContext,
                     ExerciseDatabase::class.java,
@@ -57,7 +59,7 @@ abstract class ExerciseDatabase: RoomDatabase() {
             }
         }
 
-        suspend fun populateDatabase(exerciseDao:ExerciseDao){
+        suspend fun populateDatabase(exerciseDao: ExerciseDao){
             //https://cross.expert/wp-content/uploads/2017/03/podtyagivaniya-na-kolcah-myshcy.jpeg
             exerciseDao.insert(Exercise(0,"back","Подтягивания поперечным хватом","", arrayListOf<Repeat>()))
             exerciseDao.insert(Exercise(1,"back","Подьем согнутых ног к торсу","", arrayListOf<Repeat>()))

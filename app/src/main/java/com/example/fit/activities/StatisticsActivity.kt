@@ -1,25 +1,28 @@
-package com.example.fit
+package com.example.fit.activities
 
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import com.example.fit.R
+import com.example.fit.viewmodel.ExerciseViewModel
 import com.github.mikephil.charting.charts.BarChart
 import com.github.mikephil.charting.data.BarData
 import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.data.BarEntry
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class StatisticsActivity : AppCompatActivity() {
 
     var barChart: BarChart? = null
-    private lateinit var  exerciseViewModel: ExerciseViewModel
+    private val exerciseViewModel: ExerciseViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_statistics)
         barChart = findViewById(R.id.chart);
         showBarChart()
-        exerciseViewModel = ViewModelProvider(this).get(ExerciseViewModel::class.java)
     }
 
     private fun showBarChart() {
@@ -48,3 +51,12 @@ class StatisticsActivity : AppCompatActivity() {
 
 
 }
+
+
+
+
+
+
+
+
+

@@ -1,8 +1,9 @@
-package com.example.fit
+package com.example.fit.data
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.example.fit.databinding.FragmentWeightBinding
 
 @Entity(tableName = "exercise_table")
 data class Exercise(
@@ -25,18 +26,18 @@ data class Exercise(
 )
 
 data class Repeat(
-
+    @PrimaryKey()
     @ColumnInfo(name = "set")
     var set:Int,
 
     @ColumnInfo(name = "amount")
     var amount:ArrayList<Int>,
 
-    @ColumnInfo(name="sum")
-    var sum:Int,
-
     @ColumnInfo(name = "weight")
-    var weight:Int
+    var weight:Float,
+
+    @ColumnInfo(name="sum")
+    var sum:Int
 )
 
 

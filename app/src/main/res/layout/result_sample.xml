@@ -1,17 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:padding="0dp"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content" android:gravity="center" android:layout_marginTop="1dp"
-              android:layout_marginBottom="1dp">
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:padding="1dp"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
 
-    <TextView
-            android:id="@+id/result_text"
-            android:text="5"
-            android:textColor="#000000"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+             android:divider="@color/black"
+             android:showDividers="end"
+             android:stretchColumns="*">
 
-</LinearLayout>
+    <TableRow
+            android:divider="@color/black"
+            android:showDividers="middle">
+        <TextView
+                android:id="@+id/current_result_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5"
+                android:textColor="#000000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/prev_result_text" app:layout_constraintHorizontal_bias="0.5"
+                android:gravity="center_horizontal"/>
+        <TextView
+                android:id="@+id/prev_result_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5"
+                android:textColor="#000000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toStartOf="@+id/current_result_text"
+                app:layout_constraintStart_toEndOf="@+id/best_result_text" app:layout_constraintHorizontal_bias="0.5"
+                android:gravity="center_horizontal"/>
+        <TextView
+                android:id="@+id/best_result_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5"
+                android:textColor="#000000"
+                android:textSize="18dp"
+                android:textStyle="bold" app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintEnd_toStartOf="@+id/prev_result_text" android:gravity="center_horizontal"/>
+    </TableRow>
+
+</TableLayout>

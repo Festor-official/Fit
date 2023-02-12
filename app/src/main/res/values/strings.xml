@@ -5,4 +5,32 @@
     <string name="three">3</string>
     <string name="four">4</string>
     <string name="five">5</string>
+
+    <string-array name="weight_type_array">
+        <item>With own weight</item>
+        <item>Elastic expander</item>
+        <item>Free weight</item>
+    </string-array>
+
 </resources>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

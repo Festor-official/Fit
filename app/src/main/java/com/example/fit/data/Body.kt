@@ -1,4 +1,4 @@
-package com.example.fit
+package com.example.fit.data
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

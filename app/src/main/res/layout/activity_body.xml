@@ -5,7 +5,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".BodyActivity" android:layout_centerInParent="true" android:background="#FFFFFF">
+        tools:context=".activities.BodyActivity" android:layout_centerInParent="true" android:background="#FFFFFF">
 
 
     <ImageView
@@ -24,80 +24,72 @@
             android:layout_height="wrap_content" app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
 
-    <ImageView
-            android:id="@+id/image_body"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" android:scaleType="centerInside" android:scaleX="2.3"
-            android:scaleY="2.3" android:layout_below="@id/height" android:layout_above="@id/weight"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toBottomOf="parent"/>
     <TextView
             android:id="@+id/shoulders"
             android:text="shoulders:"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:textSize="16sp" android:textStyle="bold"
-            android:textColor="#686868" app:layout_constraintBottom_toTopOf="@+id/chest"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/image_body" android:layout_marginStart="130dp"
-            android:layout_marginTop="200dp"/>
+            android:textColor="#686868"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/height" android:layout_margin="8dp"/>
     <TextView
             android:id="@+id/biceps"
             android:text="biceps:"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:textSize="16sp" android:textStyle="bold"
-            android:textColor="#686868" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/wrest" app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="150dp"
-            app:layout_constraintStart_toEndOf="@+id/image_body" android:layout_marginEnd="120dp"/>
+            android:textColor="#686868"
+            app:layout_constraintTop_toBottomOf="@+id/chest" app:layout_constraintStart_toStartOf="parent"
+            app:layout_marginBaseline="8dp" android:layout_margin="8dp"/>
 
     <TextView
             android:id="@+id/chest"
             android:text="chest:"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content" android:textSize="16sp" android:textStyle="bold"
-            android:textColor="#686868" app:layout_constraintBottom_toTopOf="@+id/talia"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="@+id/shoulders"
-            app:layout_constraintStart_toStartOf="@+id/shoulders" android:layout_marginTop="150dp"/>
+            android:textColor="#686868"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/shoulders"
+            app:layout_marginBaseline="8dp" android:layout_margin="8dp"/>
     <TextView
             android:id="@+id/forearm"
             android:text="forearm:"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:textSize="16sp" android:textStyle="bold"
-            android:textColor="#686868" app:layout_constraintTop_toBottomOf="@+id/biceps"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintBottom_toTopOf="@+id/wrest"
-            android:layout_marginTop="50dp"/>
+            android:textColor="#686868"
+            app:layout_constraintTop_toBottomOf="@+id/biceps" app:layout_constraintStart_toStartOf="parent"
+            app:layout_marginBaseline="8dp" android:layout_margin="8dp"/>
     <TextView
             android:id="@+id/wrest"
             android:text="wrest:"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:textSize="16sp" android:textStyle="bold"
             android:textColor="#686868" android:layout_alignParentEnd="true" android:layout_centerVertical="true"
-            app:layout_constraintEnd_toEndOf="@+id/image_body" app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent" android:layout_marginEnd="10dp"/>
+            app:layout_constraintTop_toBottomOf="@+id/forearm" app:layout_constraintStart_toStartOf="parent"
+            app:layout_marginBaseline="8dp" android:layout_margin="8dp"/>
     <TextView
             android:id="@+id/talia"
             android:text="talia:"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:textSize="16sp" android:textStyle="bold"
             android:textColor="#686868" android:layout_centerVertical="true"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/chest" app:layout_constraintStart_toStartOf="@+id/chest"
-            android:layout_marginBottom="32dp"/>
+            app:layout_constraintTop_toBottomOf="@+id/wrest" app:layout_marginBaseline="8dp"
+            android:layout_margin="8dp" app:layout_constraintStart_toStartOf="parent"/>
     <TextView
             android:id="@+id/legs"
             android:text="legs:"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:textSize="16sp" android:textStyle="bold"
-            android:textColor="#686868" app:layout_constraintBottom_toTopOf="@+id/weight"
-            app:layout_constraintTop_toBottomOf="@+id/talia" app:layout_constraintEnd_toEndOf="@+id/talia"
-            app:layout_constraintStart_toStartOf="@+id/talia" android:layout_marginBottom="64dp"/>
+            android:textColor="#686868"
+            app:layout_constraintTop_toBottomOf="@+id/talia"
+            app:layout_marginBaseline="8dp"
+            android:layout_margin="8dp" app:layout_constraintStart_toStartOf="parent"/>
     <TextView
-            android:id="@+id/caviar"
-            android:text="caviar:"
+            android:id="@+id/calf"
+            android:text="calf:"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:textSize="16sp" android:textStyle="bold"
             android:textColor="#686868" app:layout_constraintTop_toBottomOf="@+id/legs"
-            app:layout_constraintBottom_toTopOf="@+id/weight" app:layout_constraintEnd_toEndOf="@+id/legs"
-            app:layout_constraintStart_toStartOf="@+id/legs"/>
+            app:layout_marginBaseline="8dp"
+            android:layout_margin="8dp" app:layout_constraintStart_toStartOf="parent"/>
 
 
     <TextView
@@ -105,17 +97,17 @@
             android:text="height:"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:textSize="16sp"
-            android:textStyle="bold" android:textColor="#686868" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toTopOf="@+id/image_body"
-            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="25dp"/>
-
+            android:textStyle="bold" android:textColor="#686868"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/charts2" android:layout_margin="8dp"/>
     <TextView
             android:id="@+id/weight"
             android:textColor="#686868"
             android:text="weight:"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="@+id/image_body" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" android:textStyle="bold"/>
+            app:layout_constraintStart_toStartOf="parent" android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/calf" app:layout_marginBaseline="8dp"
+            android:layout_margin="8dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

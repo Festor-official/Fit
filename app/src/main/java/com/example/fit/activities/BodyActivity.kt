@@ -1,29 +1,30 @@
-package com.example.fit
+package com.example.fit.activities
 
 
 import android.content.Intent
-import android.content.res.AssetManager
-import android.graphics.BitmapFactory
 import android.os.Bundle
-import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModelProvider
+import com.example.fit.fragments.AddBodyMeasurementsFragment
+import com.example.fit.viewmodel.BodyViewModel
+import com.example.fit.R
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class BodyActivity : AppCompatActivity() {
-    private lateinit var  bodyViewModel: BodyViewModel
+    private val  bodyViewModel: BodyViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_body)
 
-        bodyViewModel = ViewModelProvider(this).get(BodyViewModel::class.java)
+
         var res:Float = 0F
 
         val chartButton = findViewById<ImageView>(R.id.charts2)
         chartButton.setOnClickListener {
-            val intent = Intent(this,ChartActivity::class.java)
+            val intent = Intent(this, ChartActivity::class.java)
             intent.putExtra("id","body")
             startActivity(intent)
         }
@@ -63,7 +64,7 @@ class BodyActivity : AppCompatActivity() {
             res  = measurement.legs.toFloat()  - measurement2.legs.toFloat()
             legs.text  ="legs:" + measurement.legs+ "cm"+  "($res cm)"
 
-            val caviar = findViewById<TextView>(R.id.caviar)
+            val caviar = findViewById<TextView>(R.id.calf)
             res  = measurement.caviar.toFloat()  - measurement2.caviar.toFloat()
             caviar.text  ="caviar:" + measurement.caviar+ "cm"+  "($res cm)"
 
@@ -77,16 +78,16 @@ class BodyActivity : AppCompatActivity() {
 
 
 
-        val imageView = findViewById<ImageView>(R.id.image_body)
 
-        val assets: AssetManager = applicationContext.assets
-        val reader =   assets.open("images/30662.png")
-        val bitmap = BitmapFactory.decodeStream(reader)
-        imageView.setImageBitmap(bitmap)
+
+//        val assets: AssetManager = applicationContext.assets
+//        val reader =   assets.open("images/30662.png")
+//        val bitmap = BitmapFactory.decodeStream(reader)
+//        imageView.setImageBitmap(bitmap)
 
         findViewById<ImageView>(R.id.add).setOnClickListener {
             val fm = supportFragmentManager
-            val bodyFragment = BodyFragment()
+            val bodyFragment = AddBodyMeasurementsFragment()
             bodyFragment.show(fm,"AlertDialog")
 
         }

@@ -1,4 +1,4 @@
-package com.example.fit
+package com.example.fit.adapters
 
 import android.content.Context
 import android.content.Intent
@@ -7,9 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
-import com.squareup.picasso.Picasso
+import com.example.fit.data.Exercise
+import com.example.fit.R
+import com.example.fit.activities.RepeatActivity
 
 class ExerciseAdapter internal constructor(
     context: Context
@@ -34,7 +35,7 @@ class ExerciseAdapter internal constructor(
             val current = categoryList[position]
             holder.categoryName.text = current.exercise_name
             holder.categoryImageView.setOnClickListener {
-                val intent = Intent(mContext,RepeatActivity::class.java)
+                val intent = Intent(mContext, RepeatActivity::class.java)
                 intent.putExtra("id",current.exercise_id)
                 mContext.startActivity(intent)
             }
